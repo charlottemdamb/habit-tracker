@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Info Page{% endblock %}
+
+{% block body %}
+<h1>Task Data</h1>
+<form action="/completed-tasks" id="task-form" name="chart-form" method="POST">
+  <label for="task-choice">Pick a Task</label>
+  <select name="task" id="task-choice">
+    {% for task in tasks %}
+    <option value="{{task.task_id}}">{{task.title}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit">
+</form>
+
+<div>
+  <canvas id="weekChart"></canvas>
+</div>
+<div>
+  <canvas id="monthChart"></canvas>
+</div>
+<div>
+  <canvas id="yearChart"></canvas>
+</div>
+<div>
+  <canvas id="allTimeChart"></canvas>
+</div>
+
+<h3>All Task Data:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Notes</th>
+      <th>Qty</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for task in comptasks%}
+    <tr>
+      <td>{{task.title}}</td>
+      <td>{{task.notes}}</td>
+      <td>{{task.qty}}</td>
+      <td>{{task.date}}</td>
+    </tr>
+    {%endfor%}
+</tbody>
+</table> 
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="/static/task-chart.js"></script>
+
+
+
+
+
+
+
+
+
+{%endblock%}

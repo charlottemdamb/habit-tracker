@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Log Out{% endblock %}
+
+{% block body %}
+<h2>Would you like to log out?</h2>
+
+<form action="/logout" method="post">
+    <input type="submit" value="Logout">
+</form>
+
+{%endblock%}

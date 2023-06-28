@@ -1,0 +1,32 @@
+/* html, body{
+    background-color: #f0f2ef;
+} */
+h3,h2{
+    color: #2d4944;
+}
+
+element{
+    --button-color: rgb(141, 203, 131);
+    --dark-button: rgb(112, 166, 104);
+}
+input, select{
+    background-color: #ffffff;
+    border-color: #93827F;
+}
+.btn-bs-primary {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-black);
+    background-color: #CAE2DE;
+    border-color: #CAE2DE;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #CAE2DE;
+    --bs-btn-hover-border-color: var(--dark-button);
+    --bs-btn-focus-shadow-rgb: #CAE2DE;
+    /* --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: var(--button-color);
+    --bs-btn-active-border-color: var(--button-color); */
+  }
+  
+  p{
+    color:#93827F;
+  }

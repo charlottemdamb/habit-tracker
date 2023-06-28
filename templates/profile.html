@@ -14,7 +14,7 @@
       Category: <input type="text" name="category">
     </p>
     <p>
-      <input type="submit">
+      <input class="btn btn-bs-primary" type="submit" value="Submit">
     </p>
   </form>
 
@@ -23,15 +23,15 @@
     {%for task in tasks%}
     <div>
         <p>
-        {{task.title}}<span><input type="checkbox" value={{task.task_id}} name="completed">
-            <span>Notes:<input type="text" name="task-notes-{{task.task_id}}"></span>
-            <span>Amount:<input type="number" name="qty-{{task.task_id}}"></span>
+        {{task.title}} <span><input type="checkbox" value={{task.task_id}} name="completed">
+            <span>Notes: <input type="text" name="task-notes-{{task.task_id}}"></span>
+            <span>Amount: <input type="number" name="qty-{{task.task_id}}"></span>
             
         </p>
     </div>
     {% endfor %}
     <p>
-      <input type="submit">
+      <input class="btn btn-bs-primary" type="submit" value="Submit">
     </p>
   </form>
 

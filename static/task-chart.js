@@ -37,7 +37,8 @@ function taskChartInputs(evt) {
       let wTitle
       for (let item of responseJSON.week) {
         wQtyList.push(item.qty)
-        wDatesList.push(item.date)
+        let wdate = new Date(item.date)
+        wDatesList.push(wdate.toDateString())
         if(item.title)
           wTitle = item.title
       }
@@ -50,7 +51,8 @@ function taskChartInputs(evt) {
       let mTitle
       for (let item of responseJSON.month) {
         mQtyList.push(item.qty)
-        mDatesList.push(item.date)
+        let mdate = new Date(item.date)
+        mDatesList.push(mdate.toDateString())
         if(item.title)
           mTitle = item.title
       }
@@ -63,7 +65,8 @@ function taskChartInputs(evt) {
       let yTitle
       for (let item of responseJSON.year) {
         yQtyList.push(item.qty)
-        yDatesList.push(item.date)
+        let ydate = new Date(item.date)
+        yDatesList.push(ydate.toDateString())
         if(item.title)
           yTitle = item.title
       }
@@ -83,7 +86,8 @@ function taskChartInputs(evt) {
         let titleSet 
         for (let item of responseJSON.all[idx]){
           qtyList.push(item.qty)
-          datesList.push(item.date)
+          let date = new Date(item.date)
+          datesList.push(date.toDateString())
           if (item.title){
           titleSet = item.title
           }

@@ -2,7 +2,7 @@
 {% block title %}Info Page{% endblock %}
 
 {% block body %}
-<h1>Task Data</h1>
+<h2>Task Data</h2>
 <form action="/completed-tasks" id="task-form" name="chart-form" method="POST">
   <label for="task-choice">Pick a Task</label>
   <select name="task" id="task-choice">
@@ -10,24 +10,29 @@
     <option value="{{task.task_id}}">{{task.title}}</option>
     {% endfor %}
   </select>
-  <input type="submit">
+  <input class="btn btn-bs-primary" type="submit" value="Submit">
 </form>
-
-<div>
-  <canvas id="weekChart"></canvas>
-</div>
-<div>
-  <canvas id="monthChart"></canvas>
-</div>
-<div>
-  <canvas id="yearChart"></canvas>
-</div>
-<div>
-  <canvas id="allTimeChart"></canvas>
+<div class="container-xxl">
+  <div class="row">
+    <div class="col">
+      <canvas id="weekChart"></canvas>
+    </div>
+    <div class="col">
+      <canvas id="monthChart"></canvas>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <canvas id="yearChart"></canvas>
+    </div>
+    <div class="col">
+      <canvas id="allTimeChart"></canvas>
+    </div>
+  </div>    
 </div>
 
 <h3>All Task Data:</h3>
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Task</th>

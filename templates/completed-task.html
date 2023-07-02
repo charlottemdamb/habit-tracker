@@ -2,15 +2,21 @@
 {% block title %}Info Page{% endblock %}
 
 {% block body %}
-<h2>Task Data</h2>
+<h3>Task Data</h3>
 <form action="/completed-tasks" id="task-form" name="chart-form" method="POST">
-  <label for="task-choice">Pick a Task</label>
-  <select name="task" id="task-choice">
+  <label for="task-choice">Select a Task:</label>
+  <div class="select-container">
+  <select class="select-box" name="task" id="task-choice">
+    <option value="">Select</option>
     {% for task in tasks %}
     <option value="{{task.task_id}}">{{task.title}}</option>
     {% endfor %}
   </select>
-  <input class="btn btn-bs-primary" type="submit" value="Submit">
+  <div class="icon-container">
+  <i class="fa-solid fa-caret-down"></i>
+</div>
+</div>
+   <input class="btn btn-bs-primary" type="submit" value="Submit">
 </form>
 <div class="container-xxl">
   <div class="row">
@@ -32,7 +38,7 @@
 </div>
 
 <h3>All Task Data:</h3>
-<table class="table table-striped">
+<table class="table table-dark table-striped">
   <thead>
     <tr>
       <th>Task</th>
@@ -57,7 +63,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="/static/task-chart.js"></script>
-
+<script src="https://kit.fontawesome.com/a438d39d7d.js" crossorigin="anonymous"></script>
 
 
 

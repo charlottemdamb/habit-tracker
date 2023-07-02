@@ -1,4 +1,6 @@
 'use strict';
+
+
 const chartForm = document.querySelector("#task-form")
 
 console.log(chartForm)
@@ -181,7 +183,6 @@ function createAllChart(date, qty, title, ctx) {
   console.log(qty)
 
   const newChart = new Chart(ctx, {
-
     type: 'line',
     data: {
       labels: date[0],
@@ -191,7 +192,7 @@ function createAllChart(date, qty, title, ctx) {
             data: list,
             borderWidth: 3,
             borderColor: colors[idx%colors.length],
-            backgroundColor: colors[idx %colors.length]
+            backgroundColor: colors[idx%colors.length],
           }
       })
     },
